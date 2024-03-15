@@ -68,7 +68,7 @@ int main(void) {
 	/***** Program *****/
 	std::cout << " - Kalkulator  C++ - " << std::endl;
 	std::cout << " -  dzikmikrofala  - " << std::endl;
-	std::cout << "\nWybierz typ dzialania:\n1 - dodawanie\n2 - odejmowanie\n3 - mnozenie\n4 - dzielenie\n5 - potegowanie\n6 - pierwiastkowanie\n\nWybor: ";
+	std::cout << "\nWybierz typ dzialania: \n\ndodawanie \nodejmowanie \nmnozenie \ndzielenie \npotegowanie \npierwiastkowanie \n\nWybor: ";
 	std::cin >> wybor;
 	ToLower(wybor);
 	std::cout << "Podaj 1 liczbe: ";
@@ -90,7 +90,7 @@ int main(void) {
 		int j = 0;
 		while (j < 1) {
 			system("cls");
-			std::cout << "Wybierz typ dzialania:\n1 - dodawanie\n2 - odejmowanie\n3 - mnozenie\n4 - dzielenie\n5 - potegowanie\n6 - pierwiastkowanie" << std::endl;
+			std::cout << "Wybierz typ dzialania: \n\ndodawanie \nodejmowanie \nmnozenie \ndzielenie \npotegowanie \npierwiastkowanie \n\nWybor: " << std::endl;
 			std::cout << "Aktualny wynik: " << wynik << std::endl << std::endl;
 			std::cout << "Wybor: ";
 			std::cin >> wybor;
