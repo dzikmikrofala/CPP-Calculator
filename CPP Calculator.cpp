@@ -5,33 +5,24 @@
 #include <Windows.h>
 #include <list>
 
-void TryStoi(std::string stringvar, int& variable) {
-	try {
-		variable = stoi(stringvar);
-	}
-	catch (std::invalid_argument& e) {
-		std::cerr << "Catched std::invalid_argument: " << e.what() << std::endl;
-	}
-	catch (std::out_of_range& e) {
-		std::cerr << "Catched std::out_of_range:" << e.what() << std::endl;
-	}
-	catch (std::exception& e) {
-		std::cerr << "Error: " << e.what() << std::endl;
-	}
-}
-
 void TryStod(std::string stringvar, double& variable) {
 	try {
 		variable = stod(stringvar);
 	}
 	catch (std::invalid_argument& e) {
 		std::cerr << "Catched std::invalid_argument: " << e.what() << std::endl;
+		std::cin;
+		return;
 	}
 	catch (std::out_of_range& e) {
 		std::cerr << "Catched std::out_of_range: " << e.what() << std::endl;
+		std::cin;
+		return;
 	}
 	catch (std::exception& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
+		std::cin;
+		return;
 	}
 }
 
@@ -50,6 +41,8 @@ void Calculate(std::string wybor, double liczba1, double liczba2, double& wynik)
 		wynik = pow(liczba1, 1 / liczba2);
 	else {
 		std::cout << "Masz podac typ dzialania." << std::endl;
+		std::cin;
+		return;
 	}
 }
 
@@ -96,6 +89,7 @@ int main(void) {
 	}
 	if (!found) {
 		std::cout << "Masz wybrac 1 z typow dzialan!" << std::endl;
+		std::cin;
 		return 1;
 	}
 	std::cout << "Podaj 1 liczbe: ";
@@ -106,6 +100,7 @@ int main(void) {
 	TryStod(liczba2s, liczba2);
 	if (liczba2 == 0) {
 		std::cout << "Nie dziel przez zero!" << std::endl;
+		std::cin;
 		return 1;
 	}
 	Calculate(wybor, liczba1, liczba2, wynik);
@@ -135,12 +130,14 @@ int main(void) {
 			else if (ToLower(liczbadalej) == "tak") {}
 			else {
 				std::cout << "Podaj odpowiedz tak lub nie!" << std::endl;
+				std::cin;
 				return 1;
 			}
 		}
 	}
 	else {
 		std::cout << "Podaj odpowiedz tak lub nie!" << std::endl;
+		std::cin;
 		return 1;
 	}
 	return 0;
